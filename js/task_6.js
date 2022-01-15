@@ -5,7 +5,7 @@
 const inputRef = document.querySelector("#validation-input");
 
 const onCheckinputLength = () => {
-  inputRef.value.length >= Number(inputRef.dataset.length)
+  inputRef.value.length === Number(inputRef.dataset.length)
     ? inputRef.classList.add("valid")
     : inputRef.classList.add("invalid");
 };

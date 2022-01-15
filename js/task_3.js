@@ -21,14 +21,8 @@ const images = [
   },
 ];
 const imgContainer=document.querySelector('.gallery');
-const createImgItem=(url,alt)=>{
-  const imgItem=document.createElement('li');
-  imgItem.innerHTML=`
-  <img src="${url}" alt="${alt}" width="360">`;
-  return imgItem;
+const imgList= images.map(({ url, alt })=>{
+    return `<li><img src = '${url}' alt = '${alt}' width="320"></li>`;
+  }).join("");
 
-}
-
-const imgList=images.map(({url,alt})=>createImgItem(url,alt))
-imgContainer.append(...imgList);
-
+imgContainer.insertAdjacentHTML("afterbegin", imgList);
